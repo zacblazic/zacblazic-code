@@ -1,2 +1,2 @@
 = Assignments =
-  * [http://code.google.com/p/zacblazic-code/wiki/TPG2Assignment1?ts=1328804270&updated=TPG3Assignment1 Assignment 1]
+  * [http://code.google.com/p/zacblazic-code/wiki/TechnicalProgramming2Assignment1 Assignment 1]
