@@ -1,4 +1,3 @@
-
 package za.ac.cput.account.test;
 
 import com.google.inject.Guice;
@@ -11,10 +10,10 @@ import za.ac.cput.account.conf.AccountModule;
  *
  * @author Zac Blazic
  */
+
 public class AccountJUnitTest {
     
     private static Injector injector;
-    private static Account account;
     
     public AccountJUnitTest() {
     }
@@ -26,20 +25,19 @@ public class AccountJUnitTest {
     }
 
     @AfterClass
-    public static void tearDownClass() throws Exception {
+    public static void tearDownClass() throws Exception 
+    {
     }
     
     @Before
     public void setUp() 
     {
-        
     }
     
     @After
-    public void tearDown() {
+    public void tearDown() 
+    {
     }
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
     
     @Test
     public void testDeposit() 
