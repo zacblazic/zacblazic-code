@@ -29,7 +29,7 @@ public class DatabaseServiceJUnitTest
     }
 
     @Test
-    public void testAddUser() throws Exception
+    public void testGetUser() throws Exception
     {
         DatabaseService databaseService = injector.getInstance(DatabaseService.class);
         User user = databaseService.getUser("zacblazic@gmail.com");
