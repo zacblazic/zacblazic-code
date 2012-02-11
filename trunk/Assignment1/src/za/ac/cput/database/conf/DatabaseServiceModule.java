@@ -24,10 +24,8 @@ public class DatabaseServiceModule extends AbstractModule
     @Provides
     MockDatabaseService provideDatabaseService()
     {
-        Map<String, User> users = new HashMap<>();
-        users.put("zacblazic@gmail.com", new User("zacblazic@gmail.com", "password"));
-        
-        MockDatabaseService databaseService = new MockDatabaseService(users);
+        MockDatabaseService databaseService = new MockDatabaseService();
+        databaseService.addUser("zacblazic@gmail.com", "password");
         return databaseService;
     }
 }
