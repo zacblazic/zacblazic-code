@@ -10,5 +10,6 @@ import za.ac.cput.database.model.User;
 
 public interface DatabaseService 
 {
+    void addUser(String username, String password);
     User getUser(String username) throws NoSuchUserException;
 }
