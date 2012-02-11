@@ -1,0 +1,14 @@
+package za.ac.cput.database.exception;
+
+/**
+ *
+ * @author Zac Blazic
+ */
+
+public class NoSuchUserException extends Exception
+{
+    public NoSuchUserException()
+    {
+        super("No such user exists");
+    }
+}
