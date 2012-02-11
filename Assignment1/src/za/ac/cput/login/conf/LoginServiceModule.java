@@ -5,7 +5,7 @@ import com.google.inject.Provides;
 import za.ac.cput.database.DatabaseService;
 import za.ac.cput.database.internal.MockDatabaseService;
 import za.ac.cput.login.LoginService;
-import za.ac.cput.login.internal.WebLoginService;
+import za.ac.cput.login.internal.StoreLoginService;
 
 /**
  *
@@ -17,7 +17,7 @@ public class LoginServiceModule extends AbstractModule
     @Override
     public void configure()
     {
-        bind(LoginService.class).to(WebLoginService.class);
+        bind(LoginService.class).to(StoreLoginService.class);
         bind(DatabaseService.class).to(MockDatabaseService.class);
     }
     

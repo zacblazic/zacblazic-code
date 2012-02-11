@@ -18,7 +18,8 @@ public class ResolverJUnitTest {
     @Test(timeout=1000)
     public void testResolve() 
     {
-        Assert.assertEquals("66.220.149.11", Resolver.resolve("facebook.com"));
+        //These are bound to fail as IP addresses can change
+        Assert.assertEquals("198.54.223.4", Resolver.resolve("www.cput.ac.za"));
         Assert.assertEquals("208.80.152.201", Resolver.resolve("wikipedia.org"));
         Assert.assertEquals("64.34.119.12", Resolver.resolve("stackoverflow.com"));
     }

@@ -12,12 +12,12 @@ import za.ac.cput.login.exception.InvalidPasswordException;
  * @author Zac Blazic
  */
 
-public class WebLoginService implements LoginService
+public class StoreLoginService implements LoginService
 {
     private final DatabaseService databaseService;
     
     @Inject
-    public WebLoginService(DatabaseService databaseService)
+    public StoreLoginService(DatabaseService databaseService)
     {
         this.databaseService = databaseService;
     }
