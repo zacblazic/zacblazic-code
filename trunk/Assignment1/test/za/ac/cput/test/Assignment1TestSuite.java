@@ -8,6 +8,7 @@ import za.ac.cput.test.database.DatabaseServiceJUnitTest;
 import za.ac.cput.test.login.LoginServiceJUnitTest;
 import za.ac.cput.test.prime.PrimeJUnitTest;
 import za.ac.cput.test.resolver.ResolverJUnitTest;
+import za.ac.cput.test.searcher.SearcherJUnitTest;
 import za.ac.cput.test.shoppingcart.ShoppingCartJUnitTest;
 import za.ac.cput.test.sorter.SorterJUnitTest;
 
@@ -20,7 +21,7 @@ import za.ac.cput.test.sorter.SorterJUnitTest;
 @Suite.SuiteClasses({AccountJUnitTest.class, ClockJUnitTest.class,
         DatabaseServiceJUnitTest.class, LoginServiceJUnitTest.class, 
         PrimeJUnitTest.class, ResolverJUnitTest.class, SorterJUnitTest.class,
-        ShoppingCartJUnitTest.class})
+        ShoppingCartJUnitTest.class, SearcherJUnitTest.class})
 public class Assignment1TestSuite 
 {
 }
