@@ -11,6 +11,7 @@ import za.ac.cput.test.resolver.ResolverJUnitTest;
 import za.ac.cput.test.searcher.SearcherJUnitTest;
 import za.ac.cput.test.shoppingcart.ShoppingCartJUnitTest;
 import za.ac.cput.test.sorter.SorterJUnitTest;
+import za.ac.cput.test.urlshortener.URLShortenerJUnitTest;
 
 /**
  *
@@ -18,10 +19,16 @@ import za.ac.cput.test.sorter.SorterJUnitTest;
  */
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({AccountJUnitTest.class, ClockJUnitTest.class,
-        DatabaseServiceJUnitTest.class, LoginServiceJUnitTest.class, 
-        PrimeJUnitTest.class, ResolverJUnitTest.class, SorterJUnitTest.class,
-        ShoppingCartJUnitTest.class, SearcherJUnitTest.class})
+@Suite.SuiteClasses({AccountJUnitTest.class,
+                     ClockJUnitTest.class,
+                     DatabaseServiceJUnitTest.class, 
+                     LoginServiceJUnitTest.class, 
+                     PrimeJUnitTest.class, 
+                     ResolverJUnitTest.class, 
+                     SorterJUnitTest.class,
+                     ShoppingCartJUnitTest.class, 
+                     SearcherJUnitTest.class,
+                     URLShortenerJUnitTest.class})
 public class Assignment1TestSuite 
 {
 }
