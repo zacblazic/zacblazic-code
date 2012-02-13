@@ -13,7 +13,7 @@ import za.ac.cput.shoppingcart.model.Item;
 
 public class StoreShoppingCart implements ShoppingCart
 {
-    private final List<Item> items = new ArrayList<>();
+    private final List<Item> items = new ArrayList<Item>();
     
     public StoreShoppingCart()
     {

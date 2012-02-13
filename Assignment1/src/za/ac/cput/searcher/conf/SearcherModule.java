@@ -25,7 +25,7 @@ public class SearcherModule extends AbstractModule
     @Provides
     public PatternSearcher provideSearcher() throws Exception
     {
-        List<String> source = new ArrayList<>();
+        List<String> source = new ArrayList<String>();
         BufferedReader in = new BufferedReader(new FileReader("./words.txt"));
         String line = in.readLine();
         
