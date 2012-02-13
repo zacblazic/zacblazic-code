@@ -33,6 +33,11 @@ public class URLShortenerJUnitTest
         URLShortener shortener = injector.getInstance(URLShortener.class);
         
         String answer = shortener.shorten("www.google.com");
-        System.out.println(answer);
+        
+        Assert.assertNotNull(answer);
+        Assert.assertTrue(answer.length() == 12);
+        Assert.assertNotSame("www.google.com", answer);
+        
+        System.out.println("URLShortener: www.google.com = " + answer);
     }
 }

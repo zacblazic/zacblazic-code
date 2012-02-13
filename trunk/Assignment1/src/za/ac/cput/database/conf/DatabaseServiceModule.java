@@ -19,7 +19,7 @@ public class DatabaseServiceModule extends AbstractModule
     }
     
     @Provides
-    MockDatabaseService provideDatabaseService()
+    public MockDatabaseService provideDatabaseService()
     {
         MockDatabaseService databaseService = new MockDatabaseService();
         databaseService.addUser("zacblazic@gmail.com", "password");

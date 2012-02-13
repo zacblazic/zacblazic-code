@@ -13,7 +13,7 @@ import za.ac.cput.database.model.User;
 
 public class MockDatabaseService implements DatabaseService
 {
-    private final Map<String, User> users = new HashMap<>();
+    private final Map<String, User> users = new HashMap<String, User>();
     
     public MockDatabaseService()
     {

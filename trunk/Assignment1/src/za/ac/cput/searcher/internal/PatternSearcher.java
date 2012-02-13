@@ -21,7 +21,7 @@ public final class PatternSearcher implements Searcher
     @Override
     public List<String> search(String pattern) 
     {
-        List<String> results = new ArrayList<>();
+        List<String> results = new ArrayList<String>();
         
         for(String s : source)
         {
