@@ -1,2 +1,0 @@
-= Assignments =
-  * [http://code.google.com/p/zacblazic-code/wiki/TechnicalProgramming2Assignment1 Assignment 1]
