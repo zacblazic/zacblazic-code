@@ -9,9 +9,9 @@ import za.ac.cput.encapsulation.Date;
  * @author Zac Blazic
  */
 
-public class DateJUnitTest 
+public class EncapsulationJUnitTest 
 {    
-    public DateJUnitTest() 
+    public EncapsulationJUnitTest() 
     {
     }
     
