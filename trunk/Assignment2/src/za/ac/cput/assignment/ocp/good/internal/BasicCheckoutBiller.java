@@ -1,11 +1,13 @@
-package za.ac.cput.assignment.ocp.good;
+package za.ac.cput.assignment.ocp.good.internal;
+
+import za.ac.cput.assignment.ocp.good.Biller;
 
 /**
  *
  * @author Zac Blazic
  */
 
-public class SuperCheckoutBiller implements Biller
+public class BasicCheckoutBiller implements Biller
 {
     @Override
     public void bill(double amount)
@@ -16,7 +18,7 @@ public class SuperCheckoutBiller implements Biller
     @Override
     public void initialize()
     {
-        System.out.println("Initializing super checkout biller");
+        System.out.println("Initializing basic checkout biller");
         //Add some code to set up the biller
     }
 }
