@@ -1,4 +1,6 @@
-package za.ac.cput.assignment.ocp.good;
+package za.ac.cput.assignment.ocp.good.internal;
+
+import za.ac.cput.assignment.ocp.good.Biller;
 
 /**
  *

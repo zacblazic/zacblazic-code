@@ -1,10 +1,10 @@
 package za.ac.cput.assignment.ocp.bad.test;
 
-import org.junit.*;
-import static org.junit.Assert.*;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import za.ac.cput.assignment.ocp.Item;
 import za.ac.cput.assignment.ocp.ShoppingCart;
 import za.ac.cput.assignment.ocp.bad.CheckoutBiller;
-import za.ac.cput.assignment.ocp.Item;
 import za.ac.cput.assignment.ocp.bad.StoreShoppingCart;
 
 /**
@@ -27,11 +27,6 @@ public class BadOCPJUnitTest
     @Test
     public void testBasicCheckoutBiller() 
     {
-        /*
-         * Not using dependency injection here to simplify the essence of
-         * the issue under view.
-         */
-        
         CheckoutBiller biller = new CheckoutBiller("BasicCheckoutBiller");
         ShoppingCart cart = new StoreShoppingCart(biller);
         cart.add(new Item("SX100", "Samsung HDTV", 7999, "Full 1080p television"));
@@ -41,11 +36,6 @@ public class BadOCPJUnitTest
     @Test
     public void testSuperCheckoutBiller() 
     {
-        /*
-         * Not using dependency injection here to simplify the essence of
-         * the issue under view.
-         */
-        
         CheckoutBiller biller = new CheckoutBiller("SuperCheckoutBiller");
         ShoppingCart cart = new StoreShoppingCart(biller);
         cart.add(new Item("SX100", "Samsung HDTV", 7999, "Full 1080p television"));
@@ -55,11 +45,6 @@ public class BadOCPJUnitTest
     @Test
     public void testMockCheckoutBiller() 
     {
-        /*
-         * Not using dependency injection here to simplify the essence of
-         * the issue under view.
-         */
-        
         CheckoutBiller biller = new CheckoutBiller("MockCheckoutBiller");
         ShoppingCart cart = new StoreShoppingCart(biller);
         cart.add(new Item("SX100", "Samsung HDTV", 7999, "Full 1080p television"));

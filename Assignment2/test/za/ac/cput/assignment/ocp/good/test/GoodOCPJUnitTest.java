@@ -2,9 +2,13 @@ package za.ac.cput.assignment.ocp.good.test;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import za.ac.cput.assignment.ocp.Item;
 import za.ac.cput.assignment.ocp.ShoppingCart;
-import za.ac.cput.assignment.ocp.good.*;
+import za.ac.cput.assignment.ocp.good.Biller;
+import za.ac.cput.assignment.ocp.good.StoreShoppingCart;
+import za.ac.cput.assignment.ocp.good.conf.BillerConfig;
 
 /**
  *
@@ -13,6 +17,8 @@ import za.ac.cput.assignment.ocp.good.*;
 
 public class GoodOCPJUnitTest
 {
+    public static ApplicationContext context;
+    
     public GoodOCPJUnitTest()
     {
     }
@@ -20,18 +26,14 @@ public class GoodOCPJUnitTest
     @BeforeClass
     public static void setUpClass() throws Exception
     {
+        context = new AnnotationConfigApplicationContext(BillerConfig.class);
         System.out.println("* Good OCP Tests");
     }
 
     @Test
     public void testBasicCheckoutBiller() 
     {
-        /*
-         * Not using dependency injection here to simplify the essence of
-         * the issue under view.
-         */
-        
-        Biller biller = new BasicCheckoutBiller();
+        Biller biller = (Biller)context.getBean("basicCheckoutBiller");
         ShoppingCart cart = new StoreShoppingCart(biller);
         cart.add(new Item("GN3949", "Samsung Galaxy Note", 8999, "Dual core android phone"));
         cart.checkout();
@@ -40,12 +42,7 @@ public class GoodOCPJUnitTest
     @Test
     public void testSuperCheckoutBiller() 
     {
-        /*
-         * Not using dependency injection here to simplify the essence of
-         * the issue under view.
-         */
-        
-        Biller biller = new SuperCheckoutBiller();
+        Biller biller = (Biller)context.getBean("superCheckoutBiller");
         ShoppingCart cart = new StoreShoppingCart(biller);
         cart.add(new Item("GN3949", "Samsung Galaxy Note", 8999, "Dual core android phone"));
         cart.checkout();
@@ -54,12 +51,7 @@ public class GoodOCPJUnitTest
     @Test
     public void testMockCheckoutBiller() 
     {
-        /*
-         * Not using dependency injection here to simplify the essence of
-         * the issue under view.
-         */
-        
-        Biller biller = new MockCheckoutBiller();
+        Biller biller = (Biller)context.getBean("mockCheckoutBiller");
         ShoppingCart cart = new StoreShoppingCart(biller);
         cart.add(new Item("GN3949", "Samsung Galaxy Note", 8999, "Dual core android phone"));
         cart.checkout();
