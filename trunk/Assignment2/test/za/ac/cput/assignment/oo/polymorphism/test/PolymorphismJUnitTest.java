@@ -48,6 +48,9 @@ public class PolymorphismJUnitTest
     /*
      * Here we are demonstrating polymorphism by passing 
      * CompactFluorescentBulb to the changeBulb method.
+     * Notice that polymorphism also occurs when assigning
+     * the implemenation of LightingService to the interface
+     * reference.
      */
     @Test
     public void testChangeBulbCFL() 

@@ -6,6 +6,7 @@ import za.ac.cput.assignment.lsp.LSPTestSuite;
 import za.ac.cput.assignment.ocp.OCPTestSuite;
 import za.ac.cput.assignment.oo.OOTestSuite;
 import za.ac.cput.assignment.plk.PLKTestSuite;
+import za.ac.cput.assignment.srp.SRPTestSuite;
 
 /**
  *
@@ -14,6 +15,7 @@ import za.ac.cput.assignment.plk.PLKTestSuite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({OOTestSuite.class,
+                     SRPTestSuite.class,
                      OCPTestSuite.class,
                      PLKTestSuite.class,
                      LSPTestSuite.class})
