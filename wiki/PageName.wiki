@@ -1,0 +1,4 @@
+#summary About the project
+
+= Technical Programming 2 =
+This repository is used mainly as a container for assignments and projects that relate to technical programming. It is also a record for personal development with regards to coding skills.
