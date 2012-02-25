@@ -1,23 +1,23 @@
-package za.ac.cput.assignment.ocp.violate.test;
+package za.ac.cput.assignment.ocp.obey.test;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import za.ac.cput.assignment.ocp.violate.conf.Config;
-import za.ac.cput.assignment.ocp.violate.service.twitter.TwitterService;
+import za.ac.cput.assignment.ocp.obey.conf.Config;
+import za.ac.cput.assignment.ocp.obey.service.twitter.TwitterService;
 
 /**
  *
  * @author Zac Blazic
  */
 
-public class ViolateOCPJUnitTest
+public class ObeyOCPJUnitTest
 {
     private static ApplicationContext context;
     
-    public ViolateOCPJUnitTest()
+    public ObeyOCPJUnitTest()
     {
     }
 
@@ -31,7 +31,7 @@ public class ViolateOCPJUnitTest
     public void testTweet() 
     {
         /*
-         * To see the where the violation occurs plese see the config file.
+         * To see the where the compliance occurs plese see the config file.
          */
         
         TwitterService twitterService = (TwitterService)context.getBean("twitterService");
