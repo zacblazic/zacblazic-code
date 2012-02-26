@@ -31,6 +31,10 @@ public class ViolateDIPJUnitTest
     @Test
     public void testGenerateSalaryReport() 
     {
+        /*
+         * To see the actual violation please look at the Config
+         */
+        
         EmployeeReporter employeeReporter = (EmployeeReporter)context.getBean("employeeReporter");
         EmployeeSalaryReport report = employeeReporter.generateSalaryReport();
         
