@@ -31,6 +31,10 @@ public class ObeyDIPJUnitTest
     @Test
     public void testGenerateSalaryReport() 
     {
+        /*
+         * To see the compliance please look at the Config
+         */
+        
         EmployeeReporter employeeReporter = (EmployeeReporter)context.getBean("employeeReporter");
         EmployeeSalaryReport report = employeeReporter.generateSalaryReport();
         
