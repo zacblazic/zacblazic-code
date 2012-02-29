@@ -2,6 +2,7 @@ package za.ac.cput.assignment;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+import za.ac.cput.assignment.adp.ADPTestSuite;
 import za.ac.cput.assignment.crp.CRPTestSuite;
 import za.ac.cput.assignment.dip.DIPTestSuite;
 import za.ac.cput.assignment.isp.ISPTestSuite;
@@ -24,7 +25,8 @@ import za.ac.cput.assignment.srp.SRPTestSuite;
                      PLKTestSuite.class,
                      LSPTestSuite.class,
                      ISPTestSuite.class,
-                     CRPTestSuite.class})
+                     CRPTestSuite.class,
+                     ADPTestSuite.class})
 public class Assignment2TestSuite
 {
 }
