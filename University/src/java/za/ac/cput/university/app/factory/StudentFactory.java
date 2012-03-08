@@ -11,13 +11,16 @@ import za.ac.cput.university.model.Student;
  *
  * @author 210208880
  */
-public class StudentFactory 
-{
-    public static Student getInstance()
-    {
+public class StudentFactory {
+    
+    public static Student getInstance() {
         Name name = new Name();
         Student student = new Student(name);
         
         return student;
+    }
+    
+    public static Student getInstance(Name name) {
+        return new Student(name);
     }
 }

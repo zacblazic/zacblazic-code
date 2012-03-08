@@ -29,7 +29,7 @@ public class StudentJUnitTest
     @BeforeClass
     public static void setUpClass() throws Exception 
     {
-        context = new ClassPathXmlApplicationContext("classpath:za/ac/cput/university/app/conf/applicationContext-*.xml");
+        context = new ClassPathXmlApplicationContext("classpath:za/ac/cput/university/app/conf/application-context.xml");
         studentCrudService = (StudentCrudService)context.getBean("studentCrudService");
     }
 

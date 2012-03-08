@@ -5,13 +5,13 @@
 package za.ac.cput.university.services.crud;
 
 import za.ac.cput.university.model.Student;
-import za.ac.cput.university.services.Service;
+import za.ac.cput.university.services.CrudService;
 
 /**
  *
- * @author 210208880
+ * @author Zac Blazic
  */
-public interface StudentCrudService extends Service<Student, Long>
-{
+
+public interface StudentCrudService extends CrudService<Student, Long> {
     
 }

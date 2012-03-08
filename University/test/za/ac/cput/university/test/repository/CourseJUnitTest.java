@@ -22,26 +22,22 @@ import za.ac.cput.university.services.crud.CourseCrudService;
  * @author Zac Blazic
  */
 
-public class CourseJUnitTest
-{
+public class CourseJUnitTest {
     private static ApplicationContext context;
     private static CourseCrudService courseCrudService;
     private static Long courseId;
     
-    public CourseJUnitTest()
-    {
+    public CourseJUnitTest() {
     }
 
     @BeforeClass
-    public static void setUpClass() throws Exception
-    {
-        context = new ClassPathXmlApplicationContext("classpath:za/ac/cput/university/app/conf/applicationContext-*.xml");
+    public static void setUpClass() throws Exception {
+        context = new ClassPathXmlApplicationContext("classpath:za/ac/cput/university/app/conf/application-context.xml");
         courseCrudService = (CourseCrudService)context.getBean("courseCrudService");
     }
     
     @Test
-    public void testCourse()
-    {
+    public void testCourse() {
         testCreateCourse();
         testReadCourse();
         testUpdateCourse();

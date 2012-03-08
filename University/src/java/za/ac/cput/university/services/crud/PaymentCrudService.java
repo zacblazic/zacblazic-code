@@ -1,16 +1,13 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package za.ac.cput.university.services.crud;
 
 import za.ac.cput.university.model.Payment;
-import za.ac.cput.university.services.Service;
+import za.ac.cput.university.services.CrudService;
 
 /**
  *
- * @author boniface
+ * @author Zac Blazic
  */
-public interface PaymentCrudService extends Service<Payment, Long> {
+
+public interface PaymentCrudService extends CrudService<Payment, Long> {
     
 }

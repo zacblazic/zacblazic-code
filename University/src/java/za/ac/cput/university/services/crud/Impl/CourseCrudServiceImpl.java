@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import za.ac.cput.university.model.Course;
-import za.ac.cput.university.repository.GenericDAO;
+import za.ac.cput.university.repository.GenericDao;
 import za.ac.cput.university.services.crud.CourseCrudService;
 
 /**
@@ -18,9 +18,9 @@ import za.ac.cput.university.services.crud.CourseCrudService;
 public class CourseCrudServiceImpl implements CourseCrudService {
     
     @Autowired
-    private GenericDAO<Course> dao;
+    private GenericDao<Course, Long> dao;
     
-    public final void setDao(GenericDAO<Course> dao) {
+    public final void setDao(GenericDao<Course, Long> dao) {
         this.dao = dao;
         this.dao.setClazz(Course.class);
     }

@@ -29,7 +29,7 @@ public class PaymentJUnitTest {
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-       ctx = new ClassPathXmlApplicationContext("classpath:za/ac/cput/university/app/conf/applicationContext-*.xml");
+       ctx = new ClassPathXmlApplicationContext("classpath:za/ac/cput/university/app/conf/application-context.xml");
        paymentCrudService = (PaymentCrudService) ctx.getBean("paymentCrudService");
     }
     
