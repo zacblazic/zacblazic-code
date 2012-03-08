@@ -10,8 +10,8 @@ import za.ac.cput.university.model.Payment;
  *
  * @author 210208880
  */
-public class PaymentFactory 
-{
+public class PaymentFactory {
+    
     public static Payment getInstance() {
         return new Payment();
     }

@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import za.ac.cput.university.model.Payment;
-import za.ac.cput.university.repository.GenericDAO;
+import za.ac.cput.university.repository.GenericDao;
 import za.ac.cput.university.services.crud.PaymentCrudService;
 
 /**
@@ -21,9 +21,9 @@ import za.ac.cput.university.services.crud.PaymentCrudService;
 public class PaymentCrudServiceImpl implements PaymentCrudService {
 
     @Autowired
-    private GenericDAO<Payment> dao;
+    private GenericDao<Payment, Long> dao;
 
-    public final void setDao(final GenericDAO<Payment> daoToSet) {
+    public final void setDao(final GenericDao<Payment, Long> daoToSet) {
         this.dao = daoToSet;
         this.dao.setClazz(Payment.class);
     }

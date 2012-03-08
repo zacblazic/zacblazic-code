@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package za.ac.cput.university.repository.jpa;
 
 import java.io.Serializable;
@@ -10,47 +6,48 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 import org.springframework.stereotype.Repository;
-import za.ac.cput.university.repository.GenericDAO;
+import za.ac.cput.university.repository.GenericDao;
 
 /**
  *
  * @author boniface
  */
+
 @Repository("dao")
-public class GenericJPAImpl< T extends Serializable>  implements GenericDAO<T>{
+public class GenericDaoHibernateImpl<T extends Serializable>  implements GenericDao<T, Long> {
     private Class<T> clazz;
-    @PersistenceContext(type=PersistenceContextType.EXTENDED)
-    EntityManager em; 
     
+    @PersistenceContext(type=PersistenceContextType.EXTENDED)
+    EntityManager entityManager;
 
     @Override
-    public void setClazz(final Class< T> clazzToSet) {
-        this.clazz = clazzToSet;
+    public void setClazz(final Class<T> clazz) {
+        this.clazz = clazz;
     }
 
     @Override
     public T findById(final Long id) {
-        return this.em.find(this.clazz, id);
+        return this.entityManager.find(this.clazz, id);
     }
 
     @Override
     public List<T> findAll() {
-        return this.em.createQuery("FROM " + this.clazz.getName()).getResultList();
+        return this.entityManager.createQuery("FROM " + this.clazz.getName()).getResultList();
     }
 
     @Override
     public void persist(final T entity) { 
-        this.em.persist(entity);
+        this.entityManager.persist(entity);
     }
 
     @Override
     public void merge(final T entity) {
-        this.em.merge(entity);
+        this.entityManager.merge(entity);
     }
 
     @Override
     public void remove(final T entity) {
-        this.em.remove(entity);
+        this.entityManager.remove(entity);
     }
 
     @Override
@@ -61,24 +58,23 @@ public class GenericJPAImpl< T extends Serializable>  implements GenericDAO<T>{
 
     @Override
     public List<T> findInRange(int firstResult, int maxResults) {
-
-        return em.createQuery("SELECT a FROM " + this.clazz.getName() + " e").setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+        return entityManager.createQuery("SELECT a FROM " + this.clazz.getName() + " e").setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
 
     @Override
     public long count() {
-        return (Long) em.createQuery("SELECT count(e) FROM " + this.clazz.getName() + " e").getSingleResult();
+        return (Long) entityManager.createQuery("SELECT count(e) FROM " + this.clazz.getName() + " e").getSingleResult();
     }
 
     @Override
     public T getByPropertyName(String name, String value) {
-        List<T> list = em.createQuery("SELECT e FROM " + this.clazz.getName() + " e WHERE e." + name + "=?1").setParameter(1, value).getResultList();
+        List<T> list = entityManager.createQuery("SELECT e FROM " + this.clazz.getName() + " e WHERE e." + name + "=?1").setParameter(1, value).getResultList();
         return (list.isEmpty()) ? null : list.get(0);
     }
 
     @Override
     public List<T> getEntitiesByProperName(String name, String value) {
-        List<T> list = em.createQuery("SELECT e FROM  " + this.clazz.getName() + " e WHERE e." + name + "=?1").setParameter(1, value).getResultList();
+        List<T> list = entityManager.createQuery("SELECT e FROM  " + this.clazz.getName() + " e WHERE e." + name + "=?1").setParameter(1, value).getResultList();
         return list;
     }
 }
