@@ -2,8 +2,9 @@ package za.ac.cput.university.test.repository;
 
 import java.math.BigDecimal;
 import java.util.Date;
-import org.junit.*;
-import static org.junit.Assert.*;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import za.ac.cput.university.app.factory.PaymentFactory;

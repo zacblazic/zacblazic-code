@@ -16,10 +16,13 @@ import za.ac.cput.university.services.crud.SubjectCrudService;
 @Service("subjectCrudService")
 @Transactional
 public class SubjectCrudServiceImpl implements SubjectCrudService {
-    @Autowired
     private GenericDao<Subject, Long> dao;
     
-    private void setDao(GenericDao<Subject, Long> dao)
+    public SubjectCrudServiceImpl() {
+    }
+    
+    @Autowired
+    public final void setDao(GenericDao<Subject, Long> dao)
     {
         this.dao = dao;
         this.dao.setClazz(Subject.class);
@@ -27,52 +30,61 @@ public class SubjectCrudServiceImpl implements SubjectCrudService {
 
     @Override
     public Subject findById(Long id) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        setDao(dao);
+        return dao.findById(id);
     }
 
     @Override
     public List<Subject> findAll() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        setDao(dao);
+        return dao.findAll();
     }
 
     @Override
     public void persist(Subject entity) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        setDao(dao);
+        dao.persist(entity);
     }
 
     @Override
     public void merge(Subject entity) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        setDao(dao);
+        dao.merge(entity);
     }
 
     @Override
     public void remove(Subject entity) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        setDao(dao);
+        dao.remove(entity);
     }
 
     @Override
     public void removeById(Long entityId) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        setDao(dao);
+        dao.removeById(entityId);
     }
 
     @Override
-    public List<Subject> findInRange(int firstResult, int maxResults) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public List<Subject> findInRange(int start, int end) {
+        setDao(dao);
+        return dao.findInRange(start, end);
     }
 
     @Override
     public long count() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        setDao(dao);
+        return dao.count();
     }
 
     @Override
     public Subject getByPropertyName(String name, String value) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        setDao(dao);
+        return dao.getByPropertyName(name, value);
     }
 
     @Override
     public List<Subject> getEntitiesByProperName(String name, String value) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        setDao(dao);
+        return dao.getEntitiesByProperName(name, value);
     }
-    
 }

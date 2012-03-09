@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package za.ac.cput.university.services.crud.Impl;
 
 import java.util.List;
@@ -14,21 +10,22 @@ import za.ac.cput.university.services.crud.PaymentCrudService;
 
 /**
  *
- * @author boniface
+ * @author Zac Blazic
  */
+
 @Service("paymentCrudService")
 @Transactional
 public class PaymentCrudServiceImpl implements PaymentCrudService {
-
-    @Autowired
     private GenericDao<Payment, Long> dao;
 
-    public final void setDao(final GenericDao<Payment, Long> daoToSet) {
-        this.dao = daoToSet;
-        this.dao.setClazz(Payment.class);
-    }
-
     public PaymentCrudServiceImpl() {
+    }
+    
+    @Autowired
+    public final void setDao(GenericDao<Payment, Long> dao)
+    {
+        this.dao = dao;
+        this.dao.setClazz(Payment.class);
     }
 
     @Override
@@ -64,15 +61,13 @@ public class PaymentCrudServiceImpl implements PaymentCrudService {
     @Override
     public void removeById(Long entityId) {
         setDao(dao);
-        Payment v = dao.findById(entityId);
-        dao.remove(v);
+        dao.removeById(entityId);
     }
 
     @Override
-    public List<Payment> findInRange(int firstResult, int maxResults) {
+    public List<Payment> findInRange(int start, int end) {
         setDao(dao);
-        return dao.findInRange(firstResult, maxResults);
-
+        return dao.findInRange(start, end);
     }
 
     @Override
