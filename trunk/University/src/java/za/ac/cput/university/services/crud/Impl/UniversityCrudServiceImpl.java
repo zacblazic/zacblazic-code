@@ -4,9 +4,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import za.ac.cput.university.model.Payment;
+import za.ac.cput.university.model.University;
 import za.ac.cput.university.repository.GenericDao;
-import za.ac.cput.university.services.crud.PaymentCrudService;
+import za.ac.cput.university.services.crud.UniversityCrudService;
 
 /**
  *
@@ -14,58 +14,54 @@ import za.ac.cput.university.services.crud.PaymentCrudService;
  */
 
 @Transactional
-@Service("paymentCrudService")
-public class PaymentCrudServiceImpl implements PaymentCrudService {
-    private GenericDao<Payment, Long> dao;
-
-    public PaymentCrudServiceImpl() {
-    }
+@Service("universityCrudService")
+public class UniversityCrudServiceImpl implements UniversityCrudService {
+    private GenericDao<University, Long> dao;
     
     @Autowired
-    public final void setDao(GenericDao<Payment, Long> dao)
-    {
+    private void setDao(GenericDao<University, Long> dao) {
         this.dao = dao;
-        this.dao.setClazz(Payment.class);
+        this.dao.setClazz(University.class);
     }
-
+    
     @Override
-    public Payment findById(Long id) {
+    public University findById(Long id) {
         setDao(dao);
         return dao.findById(id);
     }
 
     @Override
-    public List<Payment> findAll() {
+    public List<University> findAll() {
         setDao(dao);
         return dao.findAll();
     }
 
     @Override
-    public void persist(Payment entity) {
+    public void persist(University entity) {
         setDao(dao);
         dao.persist(entity);
     }
 
     @Override
-    public void merge(Payment entity) {
+    public void merge(University entity) {
         setDao(dao);
         dao.merge(entity);
     }
 
     @Override
-    public void remove(Payment entity) {
+    public void remove(University entity) {
         setDao(dao);
         dao.remove(entity);
     }
 
     @Override
-    public void removeById(Long entityId) {
+    public void removeById(Long id) {
         setDao(dao);
-        dao.removeById(entityId);
+        dao.removeById(id);
     }
 
     @Override
-    public List<Payment> findInRange(int start, int end) {
+    public List<University> findInRange(int start, int end) {
         setDao(dao);
         return dao.findInRange(start, end);
     }
@@ -77,13 +73,13 @@ public class PaymentCrudServiceImpl implements PaymentCrudService {
     }
 
     @Override
-    public Payment getByPropertyName(String name, String value) {
+    public University getByPropertyName(String name, String value) {
         setDao(dao);
         return dao.getByPropertyName(name, value);
     }
 
     @Override
-    public List<Payment> getEntitiesByProperName(String name, String value) {
+    public List<University> getEntitiesByProperName(String name, String value) {
         setDao(dao);
         return dao.getEntitiesByProperName(name, value);
     }

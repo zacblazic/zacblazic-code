@@ -1,6 +1,7 @@
 package za.ac.cput.university.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
 
@@ -21,14 +22,13 @@ public class Course implements Serializable {
     
     @JoinColumn(name="course_id")
     @OneToMany(cascade=CascadeType.ALL)
-    private List<Subject> subjects;
+    private List<Subject> subjects = new ArrayList<Subject>();
     
     public Course() {
     }
     
-    public Course(String name, List<Subject> subjects) {
+    public Course(String name) {
         this.name = name;
-        this.subjects = subjects;
     }
     
     public Long getId() {
@@ -64,9 +64,9 @@ public class Course implements Serializable {
     }
     
     public Subject getSubject(Long id) {
-        for(Subject s : subjects) {
-            if(s.getId().equals(id)) {
-                return s;  
+        for(Subject subject : subjects) {
+            if(subject.getId().equals(id)) {
+                return subject;  
             }
         }
         

@@ -5,10 +5,9 @@
 package za.ac.cput.university.model;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.*;
 
 /**
  *
@@ -17,9 +16,25 @@ import javax.persistence.Id;
 @Entity
 public class Faculty implements Serializable {
     private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    private String facultyName;
+    private String facultyCode;
+    
+    @JoinColumn(name="faculty_id")
+    @OneToMany(cascade=CascadeType.ALL, orphanRemoval=true)
+    private List<Department> departments = new ArrayList<Department>();
+    
+    public Faculty() {
+    }
+    
+    public Faculty(String facultyName, String facultyCode) {
+        this.facultyName = facultyName;
+        this.facultyCode = facultyCode;
+    }
 
     public Long getId() {
         return id;
@@ -27,6 +42,48 @@ public class Faculty implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+    
+    public String getFacultyName() {
+        return facultyName;
+    }
+
+    public void setFacultyName(String facultyName) {
+        this.facultyName = facultyName;
+    }
+    
+    public String getFacultyCode() {
+        return facultyCode;
+    }
+
+    public void setFacultyCode(String facultyCode) {
+        this.facultyCode = facultyCode;
+    }
+
+    public List<Department> getDepartments() {
+        return departments;
+    }
+
+    public void setDepartments(List<Department> departments) {
+        this.departments = departments;
+    }
+
+    public boolean addDepartment(Department department) {
+        return departments.add(department);
+    }
+
+    public boolean removeDepartment(Department department) {
+        return departments.remove(department);
+    }
+    
+    public Department getDepartment(Long id) {
+        for(Department department : departments) {
+            if(department.getId().equals(id)) {
+                return department;
+            }
+        }
+        
+        return null;
     }
 
     @Override

@@ -4,9 +4,7 @@
  */
 package za.ac.cput.university.app.factory;
 
-import java.util.List;
 import za.ac.cput.university.model.Course;
-import za.ac.cput.university.model.Subject;
 
 /**
  *
@@ -14,7 +12,9 @@ import za.ac.cput.university.model.Subject;
  */
 public class CourseFactory {
     
-    public static Course getInstance(String name, List<Subject> subjects) {
-        return new Course(name, subjects);
+    public static Course getInstance(String name) {
+        Course course = new Course(name);
+        
+        return course;
     }
 }

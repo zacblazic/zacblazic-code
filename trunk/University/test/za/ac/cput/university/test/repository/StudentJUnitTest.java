@@ -9,7 +9,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import za.ac.cput.university.app.factory.CourseFactory;
 import za.ac.cput.university.app.factory.StudentFactory;
+import za.ac.cput.university.model.Course;
 import za.ac.cput.university.model.Student;
 import za.ac.cput.university.services.crud.StudentCrudService;
 

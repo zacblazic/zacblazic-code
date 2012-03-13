@@ -13,8 +13,8 @@ import za.ac.cput.university.services.crud.CourseCrudService;
  * @author Zac Blazic
  */
 
-@Service("courseCrudService")
 @Transactional
+@Service("courseCrudService")
 public class CourseCrudServiceImpl implements CourseCrudService {
     private GenericDao<Course, Long> dao;
     

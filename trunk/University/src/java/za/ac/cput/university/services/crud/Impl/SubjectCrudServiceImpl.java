@@ -13,8 +13,8 @@ import za.ac.cput.university.services.crud.SubjectCrudService;
  * @author Zac Blazic
  */
 
-@Service("subjectCrudService")
 @Transactional
+@Service("subjectCrudService")
 public class SubjectCrudServiceImpl implements SubjectCrudService {
     private GenericDao<Subject, Long> dao;
     
