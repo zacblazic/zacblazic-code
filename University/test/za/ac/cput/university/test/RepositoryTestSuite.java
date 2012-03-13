@@ -2,9 +2,7 @@ package za.ac.cput.university.test;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import za.ac.cput.university.test.repository.CourseJUnitTest;
-import za.ac.cput.university.test.repository.PaymentJUnitTest;
-import za.ac.cput.university.test.repository.StudentJUnitTest;
+import za.ac.cput.university.test.repository.*;
 
 /**
  *
@@ -14,7 +12,9 @@ import za.ac.cput.university.test.repository.StudentJUnitTest;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({StudentJUnitTest.class,
                      PaymentJUnitTest.class,
-                     CourseJUnitTest.class})
+                     SubjectJUnitTest.class,
+                     CourseJUnitTest.class,
+                     UniversityJUnitTest.class})
 public class RepositoryTestSuite
 {
 }

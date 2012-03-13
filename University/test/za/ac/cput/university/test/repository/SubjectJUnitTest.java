@@ -33,7 +33,7 @@ public class SubjectJUnitTest {
     }
 
     @Test
-    public void test() {
+    public void testSubject() {
         Payment payment = PaymentFactory.getInstance();
         payment.setAmount(new BigDecimal(1500));
         payment.setOpeningBalance(new BigDecimal(3000));

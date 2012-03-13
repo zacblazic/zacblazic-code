@@ -11,9 +11,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import za.ac.cput.university.app.factory.CourseFactory;
 import za.ac.cput.university.app.factory.PaymentFactory;
+import za.ac.cput.university.app.factory.StudentFactory;
 import za.ac.cput.university.app.factory.SubjectFactory;
 import za.ac.cput.university.model.Course;
 import za.ac.cput.university.model.Payment;
+import za.ac.cput.university.model.Student;
 import za.ac.cput.university.model.Subject;
 import za.ac.cput.university.services.crud.CourseCrudService;
 
@@ -53,10 +55,8 @@ public class CourseJUnitTest {
         Subject subject = SubjectFactory.getInstance();
         subject.setPayment(payment);
         
-        List<Subject> subjects = new ArrayList<Subject>();
-        subjects.add(subject);
-        
-        Course course = CourseFactory.getInstance("Computer Science", subjects);
+        Course course = CourseFactory.getInstance("Computer Science");
+        course.addSubject(subject);
         
         courseCrudService.persist(course);
         courseId = course.getId();

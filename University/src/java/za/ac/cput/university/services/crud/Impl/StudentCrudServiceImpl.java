@@ -16,8 +16,9 @@ import za.ac.cput.university.services.crud.StudentCrudService;
  *
  * @author 210208880
  */
-@Service("studentCrudService")
+
 @Transactional
+@Service("studentCrudService")
 public class StudentCrudServiceImpl implements StudentCrudService {
     private GenericDao<Student, Long> dao;
 
