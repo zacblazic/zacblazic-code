@@ -1,9 +1,7 @@
 package za.ac.cput.university.test.repository;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -11,11 +9,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import za.ac.cput.university.app.factory.CourseFactory;
 import za.ac.cput.university.app.factory.PaymentFactory;
-import za.ac.cput.university.app.factory.StudentFactory;
 import za.ac.cput.university.app.factory.SubjectFactory;
 import za.ac.cput.university.model.Course;
 import za.ac.cput.university.model.Payment;
-import za.ac.cput.university.model.Student;
 import za.ac.cput.university.model.Subject;
 import za.ac.cput.university.services.crud.CourseCrudService;
 
