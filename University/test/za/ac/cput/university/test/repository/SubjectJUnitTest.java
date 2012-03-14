@@ -34,6 +34,10 @@ public class SubjectJUnitTest {
 
     @Test
     public void testSubject() {
+        testCreateSubject();
+    }
+
+    private void testCreateSubject() {
         Payment payment = PaymentFactory.getInstance();
         payment.setAmount(new BigDecimal(1500));
         payment.setOpeningBalance(new BigDecimal(3000));
@@ -42,7 +46,6 @@ public class SubjectJUnitTest {
         Subject subject = SubjectFactory.getInstance("Technical Programming", payment);
         subjectCrudService.persist(subject);
         subjectId = subject.getId();
-        
         Assert.assertNotNull(subjectId);
     }
 }
