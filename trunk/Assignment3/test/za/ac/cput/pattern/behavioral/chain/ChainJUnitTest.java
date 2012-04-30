@@ -7,9 +7,9 @@ import org.junit.Test;
  * @author Zac Blazic
  */
 
-public class ChainPatternJUnitTest {
+public class ChainJUnitTest {
     
-    public ChainPatternJUnitTest() {
+    public ChainJUnitTest() {
     }
 
     @Test
